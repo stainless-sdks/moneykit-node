@@ -3,6 +3,7 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as Links from 'moneykit/resources/links/index';
 import { Numbers } from './numbers';
 import * as API from './index';
 
@@ -340,7 +341,7 @@ export interface AccountRetrieveResponse {
   /**
    * Link that the account is associated with.
    */
-  link: LinkCommon;
+  link: Links.LinkCommon;
 }
 
 export interface AccountListResponse {
@@ -352,7 +353,7 @@ export interface AccountListResponse {
   /**
    * Link that the accounts are associated with.
    */
-  link: LinkCommon;
+  link: Links.LinkCommon;
 }
 
 export interface AccountRetrieveParams {

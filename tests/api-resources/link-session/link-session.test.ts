@@ -26,8 +26,8 @@ describe('resource linkSession', () => {
     const response = await moneykit.linkSession.create({
       customer_user: {
         id: 'xxxx',
-        email: { address: 'xxxx', customer_verified_at: '2023-02-16T00:00:00' },
-        phone: { number: '+16175551212', country: 'US', customer_verified_at: '2023-02-16T00:00:00' },
+        email: { address: 'xxxx', customer_verified_at: '2019-12-27T18:11:19.117Z' },
+        phone: { number: '+16175551212', country: 'US', customer_verified_at: '2019-12-27T18:11:19.117Z' },
       },
       redirect_uri: 'https://yourdomain.com/oauth.html',
       existing_link_id: 'mk_eqkWN34UEoa2NxyALG8pcV',

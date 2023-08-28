@@ -2,6 +2,7 @@
 
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
+import * as Links from 'moneykit/resources/links/index';
 import * as API from './index';
 
 export class ExchangeToken extends APIResource {
@@ -27,7 +28,7 @@ export interface ExchangeTokenResponse {
   /**
    * Details of the new link.
    */
-  link: LinkCommon;
+  link: Links.LinkCommon;
 
   /**
    * The unique ID associated with this link.

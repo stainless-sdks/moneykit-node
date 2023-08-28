@@ -4,6 +4,7 @@ import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
 import * as Accounts from 'moneykit/resources/links/accounts/index';
+import * as Links from 'moneykit/resources/links/index';
 import * as API from './index';
 
 export class Transactions extends APIResource {
@@ -80,7 +81,7 @@ export interface GetTransactionsResponse {
   /**
    * The link that these accounts belong to.
    */
-  link: LinkCommon;
+  link: Links.LinkCommon;
 
   /**
    * The page number corresponding to this batch of results.
@@ -190,7 +191,7 @@ export interface TransactionSyncResponse {
   /**
    * The link that these transactions belong to.
    */
-  link: LinkCommon;
+  link: Links.LinkCommon;
 
   /**
    * list of created, updated and removed transactions.

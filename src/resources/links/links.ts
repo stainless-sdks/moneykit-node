@@ -103,7 +103,13 @@ export interface LinkCommon {
   /**
    * An enumeration.
    */
-  error_code?: unknown;
+  error_code?:
+    | 'system_error'
+    | 'provider_error'
+    | 'institution_error'
+    | 'user_error'
+    | 'auth_expired'
+    | 'incomplete';
 
   /**
    * An ISO-8601 timestamp indicating the last time that the account was updated.
