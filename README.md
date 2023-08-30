@@ -21,11 +21,11 @@ import Moneykit from 'moneykit';
 
 const moneykit = new Moneykit({
   apiKey: 'my api key', // defaults to process.env["MONEYKIT_API_KEY"]
-  environment: 'environment_1', // defaults to 'production'
+  environment: 'sandbox', // defaults to 'production'
 });
 
 async function main() {
-  const link = await moneykit.links.retrieve('REPLACE_ME');
+  const link = await moneykit.links.retrieve('id');
 
   console.log(link);
 }
@@ -42,11 +42,11 @@ import Moneykit from 'moneykit';
 
 const moneykit = new Moneykit({
   apiKey: 'my api key', // defaults to process.env["MONEYKIT_API_KEY"]
-  environment: 'environment_1', // defaults to 'production'
+  environment: 'sandbox', // defaults to 'production'
 });
 
 async function main() {
-  const link: Moneykit.LinkResponse = await moneykit.links.retrieve('REPLACE_ME');
+  const link: Moneykit.LinkResponse = await moneykit.links.retrieve('id');
 }
 
 main();
@@ -143,11 +143,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const moneykit = new Moneykit();
 
-const response = await moneykit.links.retrieve('REPLACE_ME').asResponse();
+const response = await moneykit.links.retrieve('id').asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: links, response: raw } = await moneykit.links.retrieve('REPLACE_ME').withResponse();
+const { data: links, response: raw } = await moneykit.links.retrieve('id').withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(links.institution_id);
 ```

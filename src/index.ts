@@ -9,7 +9,7 @@ import * as qs from 'qs';
 
 const environments = {
   production: 'https://production.moneykit.com',
-  environment_1: 'https://sandbox.moneykit.com',
+  sandbox: 'https://sandbox.moneykit.com',
 };
 type Environment = keyof typeof environments;
 
@@ -24,7 +24,7 @@ export interface ClientOptions {
    *
    * Each environment maps to a different base URL:
    * - `production` corresponds to `https://production.moneykit.com`
-   * - `environment_1` corresponds to `https://sandbox.moneykit.com`
+   * - `sandbox` corresponds to `https://sandbox.moneykit.com`
    */
   environment?: Environment;
 
