@@ -62,7 +62,7 @@ a subclass of `APIError` will be thrown:
 
 ```ts
 async function main() {
-  const link = await moneykit.links.retrieve('REPLACE_ME').catch((err) => {
+  const link = await moneykit.links.retrieve('id').catch((err) => {
     if (err instanceof Moneykit.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -106,7 +106,7 @@ const moneykit = new Moneykit({
 });
 
 // Or, configure per-request:
-await moneykit.links.retrieve('REPLACE_ME', {
+await moneykit.links.retrieve('id', {
   maxRetries: 5,
 });
 ```
@@ -123,7 +123,7 @@ const moneykit = new Moneykit({
 });
 
 // Override per-request:
-await moneykit.links.retrieve('REPLACE_ME', {
+await moneykit.links.retrieve('id', {
   timeout: 5 * 1000,
 });
 ```
@@ -169,7 +169,7 @@ const moneykit = new Moneykit({
 });
 
 // Override per-request:
-await moneykit.links.retrieve('REPLACE_ME', {
+await moneykit.links.retrieve('id', {
   baseURL: 'http://localhost:8080/test-api',
   httpAgent: new http.Agent({ keepAlive: false }),
 })
