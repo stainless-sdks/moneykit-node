@@ -3,13 +3,11 @@
 import { APIResource } from 'moneykit/resource';
 import { Transactions } from './transactions';
 import { Accounts } from './accounts';
-import { Links } from './links';
 import * as API from './index';
 
 export class Users extends APIResource {
   transactions: Transactions = new Transactions(this.client);
   accounts: Accounts = new Accounts(this.client);
-  links: Links = new Links(this.client);
 }
 
 export namespace Users {
@@ -20,8 +18,4 @@ export namespace Users {
   export import Accounts = API.Accounts;
   export import GetUserAccountsResponse = API.GetUserAccountsResponse;
   export import AccountListParams = API.AccountListParams;
-
-  export import Links = API.Links;
-  export import GetUserLinksResponse = API.GetUserLinksResponse;
-  export import LinkListParams = API.LinkListParams;
 }

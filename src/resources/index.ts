@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 
+export * from './shared';
 export { Auth } from './auth/auth';
 export { CreateLinkSessionResponse, LinkSessionCreateParams, LinkSession } from './link-session/link-session';
 export {

@@ -3,6 +3,7 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as Shared from 'moneykit/resources/shared';
 import { Accounts } from './accounts/accounts';
 import { Identity } from './identity';
 import { Transactions } from './transactions';
@@ -430,7 +431,7 @@ export interface LinkRetrieveParams {
   /**
    * An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export interface LinkUpdateParams {
@@ -448,14 +449,14 @@ export interface LinkUpdateParams {
   /**
    * Header param: An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export interface LinkDeleteParams {
   /**
    * An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export namespace Links {

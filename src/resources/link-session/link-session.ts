@@ -2,6 +2,7 @@
 
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
+import * as Shared from 'moneykit/resources/shared';
 import { ExchangeToken } from './exchange-token';
 import * as API from './index';
 
@@ -87,7 +88,7 @@ export interface LinkSessionCreateParams {
   /**
    * Header param: An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export namespace LinkSessionCreateParams {

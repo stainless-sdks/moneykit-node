@@ -3,6 +3,7 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as Shared from 'moneykit/resources/shared';
 import * as API from './index';
 
 export class Introspect extends APIResource {
@@ -81,7 +82,7 @@ export interface IntrospectRetrieveParams {
   /**
    * An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export namespace Introspect {

@@ -3,6 +3,7 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as Shared from 'moneykit/resources/shared';
 import * as API from './index';
 
 export class Institutions extends APIResource {
@@ -126,7 +127,7 @@ export interface InstitutionRetrieveParams {
   /**
    * An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export interface InstitutionListParams {
@@ -155,7 +156,7 @@ export interface InstitutionListParams {
   /**
    * Header param: An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export namespace Institutions {

@@ -3,6 +3,7 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as Shared from 'moneykit/resources/shared';
 import * as API from './index';
 
 export class Transactions extends APIResource {
@@ -97,12 +98,6 @@ export namespace GetUserTransactionsResponse {
     currency: string;
 
     /**
-     * The effective (posted) date of the transaction, in ISO-8601 format. For pending
-     * transactions, this date is when the transaction was initiated.
-     */
-    date: string;
-
-    /**
      * If true, this transaction is pending or unsettled and has not yet affected the
      * account. Commonly these are credit card transactions, particularly approvals
      * (holds) such as for hotel or restaurant reservations placed in advance where the
@@ -126,14 +121,6 @@ export namespace GetUserTransactionsResponse {
      * Categories</a> for the list of possible transaction types.
      */
     category?: string | null;
-
-    /**
-     * If the institution has provided the actual time of the transaction, this field
-     * contains the full date and time of the transaction, in ISO-8601 format. If the
-     * time is not available, this field will be null. <p>Note that the time is
-     * generally reported in the timezone of the institution or the account holder.
-     */
-    datetime?: string | null;
 
     /**
      * A normalized, cleaned transaction description suitable for presentation to the
@@ -197,7 +184,7 @@ export interface TransactionListParams {
   /**
    * Header param: An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export namespace Transactions {

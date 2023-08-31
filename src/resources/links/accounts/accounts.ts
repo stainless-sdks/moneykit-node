@@ -4,6 +4,7 @@ import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
 import * as Links from 'moneykit/resources/links/index';
+import * as Shared from 'moneykit/resources/shared';
 import { Numbers } from './numbers';
 import * as API from './index';
 
@@ -360,7 +361,7 @@ export interface AccountRetrieveParams {
   /**
    * An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export interface AccountListParams {
@@ -372,7 +373,7 @@ export interface AccountListParams {
   /**
    * Header param: An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export namespace Accounts {

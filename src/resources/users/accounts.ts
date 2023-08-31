@@ -4,6 +4,7 @@ import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
 import * as Accounts_ from 'moneykit/resources/links/accounts/index';
+import * as Shared from 'moneykit/resources/shared';
 import * as API from './index';
 
 export class Accounts extends APIResource {
@@ -68,7 +69,7 @@ export interface AccountListParams {
   /**
    * Header param: An enumeration.
    */
-  'moneykit-version'?: '2023-02-18';
+  'moneykit-version'?: Shared.SupportedVersion;
 }
 
 export namespace Accounts {

@@ -70,10 +70,6 @@ Types:
 
 - <code><a href="./src/resources/auth/token.ts">GenerateAccessTokenResponse</a></code>
 
-Methods:
-
-- <code title="post /auth/token">client.auth.token.<a href="./src/resources/auth/token.ts">create</a>({ ...params }) -> GenerateAccessTokenResponse</code>
-
 ## Introspect
 
 Types:
@@ -137,16 +133,6 @@ Types:
 Methods:
 
 - <code title="get /users/{id}/accounts">client.users.accounts.<a href="./src/resources/users/accounts.ts">list</a>(id, { ...params }) -> GetUserAccountsResponse</code>
-
-## Links
-
-Types:
-
-- <code><a href="./src/resources/users/links.ts">GetUserLinksResponse</a></code>
-
-Methods:
-
-- <code title="get /users/{id}/links">client.users.links.<a href="./src/resources/users/links.ts">list</a>(id, { ...params }) -> GetUserLinksResponse</code>
 
 # WellKnown
 
