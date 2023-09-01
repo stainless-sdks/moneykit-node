@@ -1,7 +1,7 @@
 import { type RequestOptions } from './core';
 import { type Readable } from 'moneykit/_shims/node-readable';
 import { type BodyInit } from 'moneykit/_shims/fetch';
-import { FormData, File, type Blob, type FilePropertyBag } from 'moneykit/_shims/formdata';
+import { FormData, File, type Blob, type FilePropertyBag } from 'moneykit/_shims/form-data';
 import { getMultipartRequestOptions } from 'moneykit/_shims/getMultipartRequestOptions';
 import { fileFromPath } from 'moneykit/_shims/fileFromPath';
 import { type FsReadStream, isFsReadStream } from 'moneykit/_shims/node-readable';

@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "moneykit/_shims/*": ["src/_shims/*.node"],
+      "moneykit/_shims/*": ["src/_shims/*-node"],
       "moneykit": ["src/index.ts"],
       "moneykit/*": ["src/*"],
       "digest-fetch": ["./typings/digest-fetch"]
