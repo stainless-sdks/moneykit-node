@@ -12,18 +12,18 @@ export class Introspect extends APIResource {
    * `access_token`.
    */
   retrieve(
-    query?: IntrospectRetrieveParams,
+    params?: IntrospectRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<IntrospectClientResponse>;
   retrieve(options?: Core.RequestOptions): Core.APIPromise<IntrospectClientResponse>;
   retrieve(
-    query: IntrospectRetrieveParams | Core.RequestOptions = {},
+    params: IntrospectRetrieveParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<IntrospectClientResponse> {
-    if (isRequestOptions(query)) {
-      return this.retrieve({}, query);
+    if (isRequestOptions(params)) {
+      return this.retrieve({}, params);
     }
-    const { 'moneykit-version': moneykitVersion } = query;
+    const { 'moneykit-version': moneykitVersion } = params;
     return this.get('/auth/introspect', {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

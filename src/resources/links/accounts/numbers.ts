@@ -15,19 +15,19 @@ export class Numbers extends APIResource {
    */
   list(
     id: string,
-    query?: NumberListParams,
+    params?: NumberListParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<NumberListResponse>;
   list(id: string, options?: Core.RequestOptions): Core.APIPromise<NumberListResponse>;
   list(
     id: string,
-    query: NumberListParams | Core.RequestOptions = {},
+    params: NumberListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<NumberListResponse> {
-    if (isRequestOptions(query)) {
-      return this.list(id, {}, query);
+    if (isRequestOptions(params)) {
+      return this.list(id, {}, params);
     }
-    const { 'moneykit-version': moneykitVersion } = query;
+    const { 'moneykit-version': moneykitVersion } = params;
     return this.get(`/links/${id}/accounts/numbers`, {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

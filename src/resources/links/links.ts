@@ -21,19 +21,19 @@ export class Links extends APIResource {
    */
   retrieve(
     id: string,
-    query?: LinkRetrieveParams,
+    params?: LinkRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<LinkResponse>;
   retrieve(id: string, options?: Core.RequestOptions): Core.APIPromise<LinkResponse>;
   retrieve(
     id: string,
-    query: LinkRetrieveParams | Core.RequestOptions = {},
+    params: LinkRetrieveParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<LinkResponse> {
-    if (isRequestOptions(query)) {
-      return this.retrieve(id, {}, query);
+    if (isRequestOptions(params)) {
+      return this.retrieve(id, {}, params);
     }
-    const { 'moneykit-version': moneykitVersion } = query;
+    const { 'moneykit-version': moneykitVersion } = params;
     return this.get(`/links/${id}`, {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
@@ -57,17 +57,17 @@ export class Links extends APIResource {
    * and access token are no longer valid and cannot be used to access any data that
    * was associated with it.
    */
-  del(id: string, body?: LinkDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void>;
+  del(id: string, params?: LinkDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void>;
   del(id: string, options?: Core.RequestOptions): Core.APIPromise<void>;
   del(
     id: string,
-    body: LinkDeleteParams | Core.RequestOptions = {},
+    params: LinkDeleteParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    if (isRequestOptions(body)) {
-      return this.del(id, {}, body);
+    if (isRequestOptions(params)) {
+      return this.del(id, {}, params);
     }
-    const { 'moneykit-version': moneykitVersion } = body;
+    const { 'moneykit-version': moneykitVersion } = params;
     return this.delete(`/links/${id}`, {
       ...options,
       headers: { Accept: '', 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

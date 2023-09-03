@@ -17,7 +17,7 @@ export class Accounts extends APIResource {
   retrieve(
     id: string,
     accountId: string,
-    query?: AccountRetrieveParams,
+    params?: AccountRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<AccountRetrieveResponse>;
   retrieve(
@@ -28,13 +28,13 @@ export class Accounts extends APIResource {
   retrieve(
     id: string,
     accountId: string,
-    query: AccountRetrieveParams | Core.RequestOptions = {},
+    params: AccountRetrieveParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<AccountRetrieveResponse> {
-    if (isRequestOptions(query)) {
-      return this.retrieve(id, accountId, {}, query);
+    if (isRequestOptions(params)) {
+      return this.retrieve(id, accountId, {}, params);
     }
-    const { 'moneykit-version': moneykitVersion } = query;
+    const { 'moneykit-version': moneykitVersion } = params;
     return this.get(`/links/${id}/accounts/${accountId}`, {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

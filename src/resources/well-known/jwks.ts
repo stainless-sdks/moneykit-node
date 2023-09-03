@@ -11,16 +11,16 @@ export class Jwks extends APIResource {
    * The JSON Web Key Set (JWKS) is a set of keys containing the public keys used to
    * verify webhook JSON Web Tokens (JWT) issued by MoneyKit webhooks.
    */
-  json(query?: JwkJsonParams, options?: Core.RequestOptions): Core.APIPromise<JwkSet>;
+  json(params?: JwkJsonParams, options?: Core.RequestOptions): Core.APIPromise<JwkSet>;
   json(options?: Core.RequestOptions): Core.APIPromise<JwkSet>;
   json(
-    query: JwkJsonParams | Core.RequestOptions = {},
+    params: JwkJsonParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<JwkSet> {
-    if (isRequestOptions(query)) {
-      return this.json({}, query);
+    if (isRequestOptions(params)) {
+      return this.json({}, params);
     }
-    const { 'moneykit-version': moneykitVersion } = query;
+    const { 'moneykit-version': moneykitVersion } = params;
     return this.get('/.well-known/jwks.json', {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

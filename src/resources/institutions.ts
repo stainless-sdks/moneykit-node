@@ -12,19 +12,19 @@ export class Institutions extends APIResource {
    */
   retrieve(
     institutionId: string,
-    query?: InstitutionRetrieveParams,
+    params?: InstitutionRetrieveParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Institution>;
   retrieve(institutionId: string, options?: Core.RequestOptions): Core.APIPromise<Institution>;
   retrieve(
     institutionId: string,
-    query: InstitutionRetrieveParams | Core.RequestOptions = {},
+    params: InstitutionRetrieveParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<Institution> {
-    if (isRequestOptions(query)) {
-      return this.retrieve(institutionId, {}, query);
+    if (isRequestOptions(params)) {
+      return this.retrieve(institutionId, {}, params);
     }
-    const { 'moneykit-version': moneykitVersion } = query;
+    const { 'moneykit-version': moneykitVersion } = params;
     return this.get(`/institutions/${institutionId}`, {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
