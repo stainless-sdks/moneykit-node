@@ -32,10 +32,10 @@ describe('resource linkSession', () => {
       redirect_uri: 'https://yourdomain.com/oauth.html',
       existing_link_id: 'mk_eqkWN34UEoa2NxyALG8pcV',
       institution_id: 'c7318ff7-257c-490e-8242-03a815b223b7',
-      link_tags: ['string', 'string', 'string'],
+      link_tags: ['smoke_test', 'user_type:admin'],
       moneylink_features: { bug_reporter: true, enable_money_id: true },
       settings: {
-        providers: ['moneykit', 'moneykit', 'moneykit'],
+        providers: ['moneykit', 'finicity', 'plaid'],
         link_permissions: {
           requested: [
             { scope: 'accounts', reason: 'display your account balances', required: true },
@@ -48,7 +48,7 @@ describe('resource linkSession', () => {
           identity: { required: true, prefetch: true },
           transactions: { required: true, prefetch: true, extend_history: true },
         },
-        countries: ['US', 'US', 'US'],
+        countries: ['US', 'GB', 'CA'],
       },
       webhook: 'https://yourdomain.com/moneykit_webhook',
       'moneykit-version': '2023-02-18',
