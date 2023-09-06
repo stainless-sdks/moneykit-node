@@ -37,7 +37,7 @@ describe('resource transactions', () => {
           page: 1,
           size: 1,
           start_date: 'string',
-          transaction_type: ['credit', 'credit', 'credit'],
+          transaction_type: ['credit', 'debit'],
           'moneykit-version': '2023-02-18',
         },
         { path: '/_stainless_unknown_path' },
