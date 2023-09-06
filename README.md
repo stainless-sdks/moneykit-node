@@ -16,7 +16,7 @@ yarn add moneykit
 
 ## Usage
 
-The full API of this library can be found in [api.md](https://www.github.com/moneykit/moneykit-node/blob/master/api.md).
+The full API of this library can be found in [api.md](https://www.github.com/moneykit/moneykit-node/blob/main/api.md).
 
 ```js
 import Moneykit from 'moneykit';
