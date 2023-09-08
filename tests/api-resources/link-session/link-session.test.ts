@@ -35,7 +35,7 @@ describe('resource linkSession', () => {
       link_tags: ['smoke_test', 'user_type:admin'],
       moneylink_features: { bug_reporter: true, enable_money_id: true },
       settings: {
-        providers: ['moneykit', 'finicity', 'plaid'],
+        providers: ['moneykit'],
         link_permissions: {
           requested: [
             { scope: 'accounts', reason: 'display your account balances', required: true },
@@ -48,7 +48,7 @@ describe('resource linkSession', () => {
           identity: { required: true, prefetch: true },
           transactions: { required: true, prefetch: true, extend_history: true },
         },
-        countries: ['US', 'GB', 'CA'],
+        countries: ['US'],
       },
       webhook: 'https://yourdomain.com/moneykit_webhook',
       'moneykit-version': '2023-02-18',

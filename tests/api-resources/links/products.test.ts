@@ -8,7 +8,7 @@ const moneykit = new Moneykit({ apiKey: 'something1234', baseURL: 'http://127.0.
 describe('resource products', () => {
   test('create: only required params', async () => {
     const responsePromise = moneykit.links.products.create('mk_eqkWN34UEoa2NxyALG8pcV', {
-      products: ['accounts', 'account_numbers', 'identity'],
+      products: ['accounts'],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -21,7 +21,7 @@ describe('resource products', () => {
 
   test('create: required and optional params', async () => {
     const response = await moneykit.links.products.create('mk_eqkWN34UEoa2NxyALG8pcV', {
-      products: ['accounts', 'account_numbers', 'identity'],
+      products: ['accounts'],
       'moneykit-version': '2023-02-18',
     });
   });
