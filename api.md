@@ -145,3 +145,9 @@ Types:
 Methods:
 
 - <code title="get /.well-known/jwks.json">client.wellKnown.jwks.<a href="./src/resources/well-known/jwks.ts">json</a>({ ...params }) -> JwkSet</code>
+
+# Shared
+
+Types:
+
+- <code><a href="./src/resources/shared.ts">SupportedVersion</a></code>
