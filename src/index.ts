@@ -133,7 +133,6 @@ export class Moneykit extends Core.APIClient {
   linkSession: API.LinkSession = new API.LinkSession(this);
   users: API.Users = new API.Users(this);
   wellKnown: API.WellKnown = new API.WellKnown(this);
-  shared: API.Shared = new API.Shared(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
