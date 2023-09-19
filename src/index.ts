@@ -219,7 +219,6 @@ export namespace Moneykit {
   export import WellKnown = API.WellKnown;
 
   export import Shared = API.Shared;
-  export import SupportedVersion = API.SupportedVersion;
 
   export import SupportedVersion = API.SupportedVersion;
 }

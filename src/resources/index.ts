@@ -18,6 +18,6 @@ export {
   LinkDeleteParams,
   Links,
 } from './links/links';
-export { SupportedVersion, Shared } from './shared';
+export { Shared } from './shared';
 export { Users } from './users/users';
 export { WellKnown } from './well-known/well-known';
