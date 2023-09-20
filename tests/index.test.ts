@@ -3,7 +3,7 @@
 import Moneykit from 'moneykit';
 import { APIUserAbortError } from 'moneykit';
 import { Headers } from 'moneykit/core';
-import { Response, fetch as defaultFetch, type RequestInit, type RequestInfo } from 'moneykit/_shims/fetch';
+import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {
   const env = process.env;

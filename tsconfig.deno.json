@@ -6,9 +6,9 @@
     "rootDir": "./deno",
     "lib": ["es2020", "DOM"],
     "paths": {
-      "moneykit/_shims/*": ["deno/_shims/*"],
-      "moneykit": ["deno/index.ts"],
+      "moneykit/_shims/auto/*": ["deno/_shims/auto/*-deno"],
       "moneykit/*": ["deno/*"],
+      "moneykit": ["deno/index.ts"],
       "digest-fetch": ["./typings/digest-fetch"]
     },
     "noEmit": true,

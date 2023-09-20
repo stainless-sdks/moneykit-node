@@ -1,5 +1,5 @@
 import { createResponseHeaders } from 'moneykit/core';
-import { Headers } from 'moneykit/_shims/fetch';
+import { Headers } from 'moneykit/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters
