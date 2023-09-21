@@ -1,5 +1,5 @@
 import { multipartFormRequestOptions, createForm } from 'moneykit/core';
-import { Blob } from 'moneykit/_shims/form-data';
+import { Blob } from 'moneykit/_shims/index';
 import { toFile } from 'moneykit';
 
 describe('form data validation', () => {

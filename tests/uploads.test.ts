@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { toFile, type ResponseLike } from 'moneykit/uploads';
-import { File } from 'moneykit/_shims/form-data';
+import { File } from 'moneykit/_shims/index';
 
 class MyClass {
   name: string = 'foo';

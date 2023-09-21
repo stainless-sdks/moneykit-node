@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/moneykit.svg)](https://npmjs.org/package/moneykit)
 
-This library provides convenient access to the Moneykit Node REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the Moneykit REST API from server-side TypeScript or JavaScript.
 
 The API documentation can be found [here](https://docs.moneykit.com).
 
@@ -27,9 +27,9 @@ const moneykit = new Moneykit({
 });
 
 async function main() {
-  const link = await moneykit.links.retrieve('id');
+  const linkResponse = await moneykit.links.retrieve('id');
 
-  console.log(link);
+  console.log(linkResponse);
 }
 
 main();
@@ -48,7 +48,7 @@ const moneykit = new Moneykit({
 });
 
 async function main() {
-  const link: Moneykit.LinkResponse = await moneykit.links.retrieve('id');
+  const linkResponse: Moneykit.LinkResponse = await moneykit.links.retrieve('id');
 }
 
 main();
@@ -149,9 +149,9 @@ const response = await moneykit.links.retrieve('id').asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: links, response: raw } = await moneykit.links.retrieve('id').withResponse();
+const { data: linkResponse, response: raw } = await moneykit.links.retrieve('id').withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(links.institution_id);
+console.log(linkResponse.institution_id);
 ```
 
 ## Configuring an HTTP(S) Agent (e.g., for proxies)
@@ -200,5 +200,9 @@ The following runtimes are supported:
 - Bun 1.0 or later.
 - Cloudflare Workers.
 - Vercel Edge Runtime.
+- Jest 28 or greater with the `"node"` environment (`"jsdom"` is not supported at this time).
+- Nitro v2.6 or greater.
+
+Note that React Native is not supported at this time.
 
 If you are interested in other runtime environments, please open or upvote an issue on GitHub.
