@@ -27,9 +27,9 @@ const moneykit = new Moneykit({
 });
 
 async function main() {
-  const link = await moneykit.links.retrieve('id');
+  const linkResponse = await moneykit.links.retrieve('id');
 
-  console.log(link);
+  console.log(linkResponse);
 }
 
 main();
@@ -48,7 +48,7 @@ const moneykit = new Moneykit({
 });
 
 async function main() {
-  const link: Moneykit.LinkResponse = await moneykit.links.retrieve('id');
+  const linkResponse: Moneykit.LinkResponse = await moneykit.links.retrieve('id');
 }
 
 main();
@@ -149,9 +149,9 @@ const response = await moneykit.links.retrieve('id').asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: links, response: raw } = await moneykit.links.retrieve('id').withResponse();
+const { data: linkResponse, response: raw } = await moneykit.links.retrieve('id').withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(links.institution_id);
+console.log(linkResponse.institution_id);
 ```
 
 ## Configuring an HTTP(S) Agent (e.g., for proxies)
