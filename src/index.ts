@@ -104,7 +104,7 @@ export class Moneykit extends Core.APIClient {
    */
   constructor({ apiKey = Core.readEnv('MONEYKIT_API_KEY'), ...opts }: ClientOptions = {}) {
     if (apiKey === undefined) {
-      throw new Error(
+      throw new Errors.MoneykitError(
         "The MONEYKIT_API_KEY environment variable is missing or empty; either provide it, or instantiate the Moneykit client with an apiKey option, like new Moneykit({ apiKey: 'my apiKey' }).",
       );
     }
@@ -155,6 +155,7 @@ export class Moneykit extends Core.APIClient {
 
   static Moneykit = this;
 
+  static MoneykitError = Errors.MoneykitError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -170,6 +171,7 @@ export class Moneykit extends Core.APIClient {
 }
 
 export const {
+  MoneykitError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,
