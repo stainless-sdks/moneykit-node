@@ -3,9 +3,9 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
-import * as Accounts_ from 'moneykit/resources/links/accounts/index';
+import * as AccountsAPI from 'moneykit/resources/users/accounts';
 import * as Shared from 'moneykit/resources/shared';
-import * as API from './index';
+import * as AccountsAccountsAPI from 'moneykit/resources/links/accounts/accounts';
 
 export class Accounts extends APIResource {
   /**
@@ -45,7 +45,7 @@ export interface GetUserAccountsResponse {
 
 export namespace GetUserAccountsResponse {
   export interface Links {
-    accounts: Array<Accounts_.Account>;
+    accounts: Array<AccountsAccountsAPI.Account>;
 
     /**
      * An ISO-8601 timestamp indicating the last time that the account was updated.
@@ -73,6 +73,6 @@ export interface AccountListParams {
 }
 
 export namespace Accounts {
-  export import GetUserAccountsResponse = API.GetUserAccountsResponse;
-  export import AccountListParams = API.AccountListParams;
+  export type GetUserAccountsResponse = AccountsAPI.GetUserAccountsResponse;
+  export type AccountListParams = AccountsAPI.AccountListParams;
 }

@@ -1,21 +1,19 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'moneykit/resource';
-import { Transactions } from './transactions';
-import { Accounts } from './accounts';
-import * as API from './index';
+import * as AccountsAPI from 'moneykit/resources/users/accounts';
+import * as TransactionsAPI from 'moneykit/resources/users/transactions';
 
 export class Users extends APIResource {
-  transactions: Transactions = new Transactions(this.client);
-  accounts: Accounts = new Accounts(this.client);
+  transactions: TransactionsAPI.Transactions = new TransactionsAPI.Transactions(this.client);
+  accounts: AccountsAPI.Accounts = new AccountsAPI.Accounts(this.client);
 }
 
 export namespace Users {
-  export import Transactions = API.Transactions;
-  export import GetUserTransactionsResponse = API.GetUserTransactionsResponse;
-  export import TransactionListParams = API.TransactionListParams;
-
-  export import Accounts = API.Accounts;
-  export import GetUserAccountsResponse = API.GetUserAccountsResponse;
-  export import AccountListParams = API.AccountListParams;
+  export import Transactions = TransactionsAPI.Transactions;
+  export type GetUserTransactionsResponse = TransactionsAPI.GetUserTransactionsResponse;
+  export type TransactionListParams = TransactionsAPI.TransactionListParams;
+  export import Accounts = AccountsAPI.Accounts;
+  export type GetUserAccountsResponse = AccountsAPI.GetUserAccountsResponse;
+  export type AccountListParams = AccountsAPI.AccountListParams;
 }

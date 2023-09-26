@@ -3,8 +3,8 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as InstitutionsAPI from 'moneykit/resources/institutions';
 import * as Shared from 'moneykit/resources/shared';
-import * as API from './index';
 
 export class Institutions extends APIResource {
   /**
@@ -160,8 +160,8 @@ export interface InstitutionListParams {
 }
 
 export namespace Institutions {
-  export import GetInstitutionsResponse = API.GetInstitutionsResponse;
-  export import Institution = API.Institution;
-  export import InstitutionRetrieveParams = API.InstitutionRetrieveParams;
-  export import InstitutionListParams = API.InstitutionListParams;
+  export type GetInstitutionsResponse = InstitutionsAPI.GetInstitutionsResponse;
+  export type Institution = InstitutionsAPI.Institution;
+  export type InstitutionRetrieveParams = InstitutionsAPI.InstitutionRetrieveParams;
+  export type InstitutionListParams = InstitutionsAPI.InstitutionListParams;
 }

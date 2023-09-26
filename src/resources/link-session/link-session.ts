@@ -2,12 +2,12 @@
 
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
+import * as LinkSessionAPI from 'moneykit/resources/link-session/link-session';
 import * as Shared from 'moneykit/resources/shared';
-import { ExchangeToken } from './exchange-token';
-import * as API from './index';
+import * as ExchangeTokenAPI from 'moneykit/resources/link-session/exchange-token';
 
 export class LinkSession extends APIResource {
-  exchangeToken: ExchangeToken = new ExchangeToken(this.client);
+  exchangeToken: ExchangeTokenAPI.ExchangeToken = new ExchangeTokenAPI.ExchangeToken(this.client);
 
   /**
    * This endpoint is to be called by your back end, to establish a new link session
@@ -312,10 +312,9 @@ export namespace LinkSessionCreateParams {
 }
 
 export namespace LinkSession {
-  export import CreateLinkSessionResponse = API.CreateLinkSessionResponse;
-  export import LinkSessionCreateParams = API.LinkSessionCreateParams;
-
-  export import ExchangeToken = API.ExchangeToken;
-  export import ExchangeTokenResponse = API.ExchangeTokenResponse;
-  export import ExchangeTokenCreateParams = API.ExchangeTokenCreateParams;
+  export type CreateLinkSessionResponse = LinkSessionAPI.CreateLinkSessionResponse;
+  export type LinkSessionCreateParams = LinkSessionAPI.LinkSessionCreateParams;
+  export import ExchangeToken = ExchangeTokenAPI.ExchangeToken;
+  export type ExchangeTokenResponse = ExchangeTokenAPI.ExchangeTokenResponse;
+  export type ExchangeTokenCreateParams = ExchangeTokenAPI.ExchangeTokenCreateParams;
 }
