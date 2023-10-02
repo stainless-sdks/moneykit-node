@@ -14,9 +14,6 @@ const environments = {
 type Environment = keyof typeof environments;
 
 export interface ClientOptions {
-  /**
-   * Defaults to process.env["MONEYKIT_API_KEY"].
-   */
   apiKey?: string;
 
   /**
@@ -92,7 +89,7 @@ export class Moneykit extends Core.APIClient {
   /**
    * API Client for interfacing with the Moneykit API.
    *
-   * @param {string} [opts.apiKey=process.env['MONEYKIT_API_KEY']] - The API Key to send to the API.
+   * @param {string} [opts.apiKey=process.env['MONEYKIT_API_KEY']]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
    * @param {string} [opts.baseURL] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
@@ -105,7 +102,7 @@ export class Moneykit extends Core.APIClient {
   constructor({ apiKey = Core.readEnv('MONEYKIT_API_KEY'), ...opts }: ClientOptions = {}) {
     if (apiKey === undefined) {
       throw new Errors.MoneykitError(
-        "The MONEYKIT_API_KEY environment variable is missing or empty; either provide it, or instantiate the Moneykit client with an apiKey option, like new Moneykit({ apiKey: 'my apiKey' }).",
+        "The MONEYKIT_API_KEY environment variable is missing or empty; either provide it, or instantiate the Moneykit client with an apiKey option, like new Moneykit({ apiKey: 'My API Key' }).",
       );
     }
 
