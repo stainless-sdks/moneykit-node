@@ -152,7 +152,7 @@ describe('instantiate client', () => {
 
   test('with overriden environment variable arguments', () => {
     // set options via env var
-    process.env['MONEYKIT_API_KEY'] = 'My API Key';
+    process.env['MONEYKIT_API_KEY'] = 'another My API Key';
     const client = new Moneykit({ apiKey: 'My API Key' });
     expect(client.apiKey).toBe('My API Key');
   });
