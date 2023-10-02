@@ -98,8 +98,8 @@ describe('instantiate client', () => {
 
   test('custom signal', async () => {
     const client = new Moneykit({
-      baseURL: 'http://127.0.0.1:4010',
-      apiKey: 'My API Key',
+      baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+      apiKey: 'my api key',
       fetch: (...args) => {
         return new Promise((resolve, reject) =>
           setTimeout(
