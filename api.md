@@ -13,8 +13,8 @@ Types:
 
 Methods:
 
-- <code title="get /links/{id}">client.links.<a href="./src/resources/links/links.ts">retrieve</a>(id, { ...params }) -> SDK_Symbol_0_LinkResponse</code>
-- <code title="patch /links/{id}">client.links.<a href="./src/resources/links/links.ts">update</a>(id, { ...params }) -> SDK_Symbol_1_LinkResponse</code>
+- <code title="get /links/{id}">client.links.<a href="./src/resources/links/links.ts">retrieve</a>(id, { ...params }) -> LinkResponse</code>
+- <code title="patch /links/{id}">client.links.<a href="./src/resources/links/links.ts">update</a>(id, { ...params }) -> LinkResponse</code>
 - <code title="delete /links/{id}">client.links.<a href="./src/resources/links/links.ts">del</a>(id, { ...params }) -> void</code>
 
 ## Accounts
@@ -27,8 +27,8 @@ Types:
 
 Methods:
 
-- <code title="get /links/{id}/accounts/{account_id}">client.links.accounts.<a href="./src/resources/links/accounts/accounts.ts">retrieve</a>(id, accountId, { ...params }) -> SDK_Symbol_2_AccountRetrieveResponse</code>
-- <code title="get /links/{id}/accounts">client.links.accounts.<a href="./src/resources/links/accounts/accounts.ts">list</a>(id, { ...params }) -> SDK_Symbol_3_AccountListResponse</code>
+- <code title="get /links/{id}/accounts/{account_id}">client.links.accounts.<a href="./src/resources/links/accounts/accounts.ts">retrieve</a>(id, accountId, { ...params }) -> AccountRetrieveResponse</code>
+- <code title="get /links/{id}/accounts">client.links.accounts.<a href="./src/resources/links/accounts/accounts.ts">list</a>(id, { ...params }) -> AccountListResponse</code>
 
 ### Numbers
 
@@ -38,7 +38,7 @@ Types:
 
 Methods:
 
-- <code title="get /links/{id}/accounts/numbers">client.links.accounts.numbers.<a href="./src/resources/links/accounts/numbers.ts">list</a>(id, { ...params }) -> SDK_Symbol_4_NumberListResponse</code>
+- <code title="get /links/{id}/accounts/numbers">client.links.accounts.numbers.<a href="./src/resources/links/accounts/numbers.ts">list</a>(id, { ...params }) -> NumberListResponse</code>
 
 ## Identity
 
@@ -48,7 +48,7 @@ Types:
 
 Methods:
 
-- <code title="get /links/{id}/identity">client.links.identity.<a href="./src/resources/links/identity.ts">retrieve</a>(id, { ...params }) -> SDK_Symbol_5_IdentityResponse</code>
+- <code title="get /links/{id}/identity">client.links.identity.<a href="./src/resources/links/identity.ts">retrieve</a>(id, { ...params }) -> IdentityResponse</code>
 
 ## Transactions
 
@@ -59,8 +59,8 @@ Types:
 
 Methods:
 
-- <code title="get /links/{id}/transactions">client.links.transactions.<a href="./src/resources/links/transactions.ts">list</a>(id, { ...params }) -> SDK_Symbol_6_GetTransactionsResponse</code>
-- <code title="get /links/{id}/transactions/sync">client.links.transactions.<a href="./src/resources/links/transactions.ts">sync</a>(id, { ...params }) -> SDK_Symbol_7_TransactionSyncResponse</code>
+- <code title="get /links/{id}/transactions">client.links.transactions.<a href="./src/resources/links/transactions.ts">list</a>(id, { ...params }) -> GetTransactionsResponse</code>
+- <code title="get /links/{id}/transactions/sync">client.links.transactions.<a href="./src/resources/links/transactions.ts">sync</a>(id, { ...params }) -> TransactionSyncResponse</code>
 
 ## Products
 
@@ -84,7 +84,7 @@ Types:
 
 Methods:
 
-- <code title="get /auth/introspect">client.auth.introspect.<a href="./src/resources/auth/introspect.ts">retrieve</a>({ ...params }) -> SDK_Symbol_8_IntrospectClientResponse</code>
+- <code title="get /auth/introspect">client.auth.introspect.<a href="./src/resources/auth/introspect.ts">retrieve</a>({ ...params }) -> IntrospectClientResponse</code>
 
 # Institutions
 
@@ -95,8 +95,8 @@ Types:
 
 Methods:
 
-- <code title="get /institutions/{institution_id}">client.institutions.<a href="./src/resources/institutions.ts">retrieve</a>(institutionId, { ...params }) -> SDK_Symbol_9_Institution</code>
-- <code title="get /institutions">client.institutions.<a href="./src/resources/institutions.ts">list</a>({ ...params }) -> SDK_Symbol_10_GetInstitutionsResponse</code>
+- <code title="get /institutions/{institution_id}">client.institutions.<a href="./src/resources/institutions.ts">retrieve</a>(institutionId, { ...params }) -> Institution</code>
+- <code title="get /institutions">client.institutions.<a href="./src/resources/institutions.ts">list</a>({ ...params }) -> GetInstitutionsResponse</code>
 
 # LinkSession
 
@@ -106,7 +106,7 @@ Types:
 
 Methods:
 
-- <code title="post /link-session">client.linkSession.<a href="./src/resources/link-session/link-session.ts">create</a>({ ...params }) -> SDK_Symbol_11_CreateLinkSessionResponse</code>
+- <code title="post /link-session">client.linkSession.<a href="./src/resources/link-session/link-session.ts">create</a>({ ...params }) -> CreateLinkSessionResponse</code>
 
 ## ExchangeToken
 
@@ -116,7 +116,7 @@ Types:
 
 Methods:
 
-- <code title="post /link-session/exchange-token">client.linkSession.exchangeToken.<a href="./src/resources/link-session/exchange-token.ts">create</a>({ ...params }) -> SDK_Symbol_12_ExchangeTokenResponse</code>
+- <code title="post /link-session/exchange-token">client.linkSession.exchangeToken.<a href="./src/resources/link-session/exchange-token.ts">create</a>({ ...params }) -> ExchangeTokenResponse</code>
 
 # Users
 
@@ -128,7 +128,7 @@ Types:
 
 Methods:
 
-- <code title="get /users/{id}/transactions">client.users.transactions.<a href="./src/resources/users/transactions.ts">list</a>(id, { ...params }) -> SDK_Symbol_13_GetUserTransactionsResponse</code>
+- <code title="get /users/{id}/transactions">client.users.transactions.<a href="./src/resources/users/transactions.ts">list</a>(id, { ...params }) -> GetUserTransactionsResponse</code>
 
 ## Accounts
 
@@ -138,7 +138,7 @@ Types:
 
 Methods:
 
-- <code title="get /users/{id}/accounts">client.users.accounts.<a href="./src/resources/users/accounts.ts">list</a>(id, { ...params }) -> SDK_Symbol_14_GetUserAccountsResponse</code>
+- <code title="get /users/{id}/accounts">client.users.accounts.<a href="./src/resources/users/accounts.ts">list</a>(id, { ...params }) -> GetUserAccountsResponse</code>
 
 # WellKnown
 
@@ -150,4 +150,4 @@ Types:
 
 Methods:
 
-- <code title="get /.well-known/jwks.json">client.wellKnown.jwks.<a href="./src/resources/well-known/jwks.ts">json</a>({ ...params }) -> SDK_Symbol_15_JwkSet</code>
+- <code title="get /.well-known/jwks.json">client.wellKnown.jwks.<a href="./src/resources/well-known/jwks.ts">json</a>({ ...params }) -> JwkSet</code>
