@@ -1,5 +1,4 @@
 import { VERSION } from './version';
-import { Stream } from './streaming';
 import {
   MoneykitError,
   APIError,
@@ -41,8 +40,6 @@ type APIResponseProps = {
 
 async function defaultParseResponse<T>(props: APIResponseProps): Promise<T> {
   const { response } = props;
-  ;
-
   const contentType = response.headers.get('content-type');
   if (contentType?.includes('application/json')) {
     const json = await response.json();
@@ -722,8 +719,6 @@ export type RequestOptions<Req extends {} = Record<string, unknown> | Readable> 
   httpAgent?: Agent;
   signal?: AbortSignal | undefined | null;
   idempotencyKey?: string;
-
-
 };
 
 // This is required so that we can determine if a given object matches the RequestOptions
@@ -742,8 +737,6 @@ const requestOptionsKeys: KeysEnum<RequestOptions> = {
   httpAgent: true,
   signal: true,
   idempotencyKey: true,
-
-
 };
 
 export const isRequestOptions = (obj: unknown): obj is RequestOptions<Record<string, unknown> | Readable> => {
@@ -950,8 +943,7 @@ export const castToError = (err: any): Error => {
 };
 
 export const ensurePresent = <T>(value: T | null | undefined): T => {
-  if (value == null)
-    throw new MoneykitError(`Expected a value to be given but received ${value} instead.`);
+  if (value == null) throw new MoneykitError(`Expected a value to be given but received ${value} instead.`);
   return value;
 };
 
