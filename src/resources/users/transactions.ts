@@ -3,8 +3,8 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as TransactionsAPI from 'moneykit/resources/users/transactions';
 import * as Shared from 'moneykit/resources/shared';
-import * as API from './index';
 
 export class Transactions extends APIResource {
   /**
@@ -188,6 +188,6 @@ export interface TransactionListParams {
 }
 
 export namespace Transactions {
-  export import GetUserTransactionsResponse = API.GetUserTransactionsResponse;
-  export import TransactionListParams = API.TransactionListParams;
+  export type GetUserTransactionsResponse = TransactionsAPI.GetUserTransactionsResponse;
+  export type TransactionListParams = TransactionsAPI.TransactionListParams;
 }

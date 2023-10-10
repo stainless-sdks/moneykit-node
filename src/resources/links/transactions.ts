@@ -3,10 +3,10 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
-import * as Accounts from 'moneykit/resources/links/accounts/index';
-import * as Links from 'moneykit/resources/links/index';
+import * as TransactionsAPI from 'moneykit/resources/links/transactions';
 import * as Shared from 'moneykit/resources/shared';
-import * as API from './index';
+import * as LinksAPI from 'moneykit/resources/links/links';
+import * as AccountsAPI from 'moneykit/resources/links/accounts/accounts';
 
 export class Transactions extends APIResource {
   /**
@@ -77,12 +77,12 @@ export interface GetTransactionsResponse {
   /**
    * A list of accounts for which transactions are being returned.
    */
-  accounts: Array<Accounts.Account>;
+  accounts: Array<AccountsAPI.Account>;
 
   /**
    * The link that these accounts belong to.
    */
-  link: Links.LinkCommon;
+  link: LinksAPI.LinkCommon;
 
   /**
    * The page number corresponding to this batch of results.
@@ -178,7 +178,7 @@ export interface TransactionSyncResponse {
   /**
    * The link that these transactions belong to.
    */
-  link: Links.LinkCommon;
+  link: LinksAPI.LinkCommon;
 
   /**
    * list of created, updated and removed transactions.
@@ -389,8 +389,8 @@ export interface TransactionSyncParams {
 }
 
 export namespace Transactions {
-  export import GetTransactionsResponse = API.GetTransactionsResponse;
-  export import TransactionSyncResponse = API.TransactionSyncResponse;
-  export import TransactionListParams = API.TransactionListParams;
-  export import TransactionSyncParams = API.TransactionSyncParams;
+  export type GetTransactionsResponse = TransactionsAPI.GetTransactionsResponse;
+  export type TransactionSyncResponse = TransactionsAPI.TransactionSyncResponse;
+  export type TransactionListParams = TransactionsAPI.TransactionListParams;
+  export type TransactionSyncParams = TransactionsAPI.TransactionSyncParams;
 }

@@ -1,15 +1,14 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'moneykit/resource';
-import { Jwks } from './jwks';
-import * as API from './index';
+import * as JwksAPI from 'moneykit/resources/well-known/jwks';
 
 export class WellKnown extends APIResource {
-  jwks: Jwks = new Jwks(this.client);
+  jwks: JwksAPI.Jwks = new JwksAPI.Jwks(this.client);
 }
 
 export namespace WellKnown {
-  export import Jwks = API.Jwks;
-  export import JwkSet = API.JwkSet;
-  export import JwkJsonParams = API.JwkJsonParams;
+  export import Jwks = JwksAPI.Jwks;
+  export type JwkSet = JwksAPI.JwkSet;
+  export type JwkJsonParams = JwksAPI.JwkJsonParams;
 }
