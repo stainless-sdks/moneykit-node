@@ -197,23 +197,23 @@ export namespace Moneykit {
   export import RequestOptions = Core.RequestOptions;
 
   export import Links = API.Links;
-  export type LinkCommon = API.LinkCommon;
-  export type LinkResponse = API.LinkResponse;
-  export type LinkRetrieveParams = API.LinkRetrieveParams;
-  export type LinkUpdateParams = API.LinkUpdateParams;
-  export type LinkDeleteParams = API.LinkDeleteParams;
+  export import LinkCommon = API.LinkCommon;
+  export import LinkResponse = API.LinkResponse;
+  export import LinkRetrieveParams = API.LinkRetrieveParams;
+  export import LinkUpdateParams = API.LinkUpdateParams;
+  export import LinkDeleteParams = API.LinkDeleteParams;
 
   export import Auth = API.Auth;
 
   export import Institutions = API.Institutions;
-  export type GetInstitutionsResponse = API.GetInstitutionsResponse;
-  export type Institution = API.Institution;
-  export type InstitutionRetrieveParams = API.InstitutionRetrieveParams;
-  export type InstitutionListParams = API.InstitutionListParams;
+  export import GetInstitutionsResponse = API.GetInstitutionsResponse;
+  export import Institution = API.Institution;
+  export import InstitutionRetrieveParams = API.InstitutionRetrieveParams;
+  export import InstitutionListParams = API.InstitutionListParams;
 
   export import LinkSession = API.LinkSession;
-  export type CreateLinkSessionResponse = API.CreateLinkSessionResponse;
-  export type LinkSessionCreateParams = API.LinkSessionCreateParams;
+  export import CreateLinkSessionResponse = API.CreateLinkSessionResponse;
+  export import LinkSessionCreateParams = API.LinkSessionCreateParams;
 
   export import Users = API.Users;
 

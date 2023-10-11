@@ -11,9 +11,9 @@ export class Users extends APIResource {
 
 export namespace Users {
   export import Transactions = TransactionsAPI.Transactions;
-  export type GetUserTransactionsResponse = TransactionsAPI.GetUserTransactionsResponse;
-  export type TransactionListParams = TransactionsAPI.TransactionListParams;
+  export import GetUserTransactionsResponse = TransactionsAPI.GetUserTransactionsResponse;
+  export import TransactionListParams = TransactionsAPI.TransactionListParams;
   export import Accounts = AccountsAPI.Accounts;
-  export type GetUserAccountsResponse = AccountsAPI.GetUserAccountsResponse;
-  export type AccountListParams = AccountsAPI.AccountListParams;
+  export import GetUserAccountsResponse = AccountsAPI.GetUserAccountsResponse;
+  export import AccountListParams = AccountsAPI.AccountListParams;
 }

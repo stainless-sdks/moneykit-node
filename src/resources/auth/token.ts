@@ -26,5 +26,5 @@ export interface GenerateAccessTokenResponse {
 }
 
 export namespace Token {
-  export type GenerateAccessTokenResponse = TokenAPI.GenerateAccessTokenResponse;
+  export import GenerateAccessTokenResponse = TokenAPI.GenerateAccessTokenResponse;
 }

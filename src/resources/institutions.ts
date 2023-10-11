@@ -160,8 +160,8 @@ export interface InstitutionListParams {
 }
 
 export namespace Institutions {
-  export type GetInstitutionsResponse = InstitutionsAPI.GetInstitutionsResponse;
-  export type Institution = InstitutionsAPI.Institution;
-  export type InstitutionRetrieveParams = InstitutionsAPI.InstitutionRetrieveParams;
-  export type InstitutionListParams = InstitutionsAPI.InstitutionListParams;
+  export import GetInstitutionsResponse = InstitutionsAPI.GetInstitutionsResponse;
+  export import Institution = InstitutionsAPI.Institution;
+  export import InstitutionRetrieveParams = InstitutionsAPI.InstitutionRetrieveParams;
+  export import InstitutionListParams = InstitutionsAPI.InstitutionListParams;
 }

@@ -11,8 +11,8 @@ export class Auth extends APIResource {
 
 export namespace Auth {
   export import Token = TokenAPI.Token;
-  export type GenerateAccessTokenResponse = TokenAPI.GenerateAccessTokenResponse;
+  export import GenerateAccessTokenResponse = TokenAPI.GenerateAccessTokenResponse;
   export import Introspect = IntrospectAPI.Introspect;
-  export type IntrospectClientResponse = IntrospectAPI.IntrospectClientResponse;
-  export type IntrospectRetrieveParams = IntrospectAPI.IntrospectRetrieveParams;
+  export import IntrospectClientResponse = IntrospectAPI.IntrospectClientResponse;
+  export import IntrospectRetrieveParams = IntrospectAPI.IntrospectRetrieveParams;
 }

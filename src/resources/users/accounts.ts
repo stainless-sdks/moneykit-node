@@ -73,6 +73,6 @@ export interface AccountListParams {
 }
 
 export namespace Accounts {
-  export type GetUserAccountsResponse = AccountsAPI.GetUserAccountsResponse;
-  export type AccountListParams = AccountsAPI.AccountListParams;
+  export import GetUserAccountsResponse = AccountsAPI.GetUserAccountsResponse;
+  export import AccountListParams = AccountsAPI.AccountListParams;
 }

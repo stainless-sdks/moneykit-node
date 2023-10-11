@@ -51,6 +51,6 @@ export interface ExchangeTokenCreateParams {
 }
 
 export namespace ExchangeToken {
-  export type ExchangeTokenResponse = ExchangeTokenAPI.ExchangeTokenResponse;
-  export type ExchangeTokenCreateParams = ExchangeTokenAPI.ExchangeTokenCreateParams;
+  export import ExchangeTokenResponse = ExchangeTokenAPI.ExchangeTokenResponse;
+  export import ExchangeTokenCreateParams = ExchangeTokenAPI.ExchangeTokenCreateParams;
 }

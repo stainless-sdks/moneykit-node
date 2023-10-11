@@ -312,9 +312,9 @@ export namespace LinkSessionCreateParams {
 }
 
 export namespace LinkSession {
-  export type CreateLinkSessionResponse = LinkSessionAPI.CreateLinkSessionResponse;
-  export type LinkSessionCreateParams = LinkSessionAPI.LinkSessionCreateParams;
+  export import CreateLinkSessionResponse = LinkSessionAPI.CreateLinkSessionResponse;
+  export import LinkSessionCreateParams = LinkSessionAPI.LinkSessionCreateParams;
   export import ExchangeToken = ExchangeTokenAPI.ExchangeToken;
-  export type ExchangeTokenResponse = ExchangeTokenAPI.ExchangeTokenResponse;
-  export type ExchangeTokenCreateParams = ExchangeTokenAPI.ExchangeTokenCreateParams;
+  export import ExchangeTokenResponse = ExchangeTokenAPI.ExchangeTokenResponse;
+  export import ExchangeTokenCreateParams = ExchangeTokenAPI.ExchangeTokenCreateParams;
 }

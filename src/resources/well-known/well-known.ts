@@ -9,6 +9,6 @@ export class WellKnown extends APIResource {
 
 export namespace WellKnown {
   export import Jwks = JwksAPI.Jwks;
-  export type JwkSet = JwksAPI.JwkSet;
-  export type JwkJsonParams = JwksAPI.JwkJsonParams;
+  export import JwkSet = JwksAPI.JwkSet;
+  export import JwkJsonParams = JwksAPI.JwkJsonParams;
 }

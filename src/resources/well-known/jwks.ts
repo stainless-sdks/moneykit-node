@@ -43,6 +43,6 @@ export interface JwkJsonParams {
 }
 
 export namespace Jwks {
-  export type JwkSet = JwksAPI.JwkSet;
-  export type JwkJsonParams = JwksAPI.JwkJsonParams;
+  export import JwkSet = JwksAPI.JwkSet;
+  export import JwkJsonParams = JwksAPI.JwkJsonParams;
 }

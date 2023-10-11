@@ -409,6 +409,6 @@ export interface NumberListParams {
 }
 
 export namespace Numbers {
-  export type NumberListResponse = NumbersAPI.NumberListResponse;
-  export type NumberListParams = NumbersAPI.NumberListParams;
+  export import NumberListResponse = NumbersAPI.NumberListResponse;
+  export import NumberListParams = NumbersAPI.NumberListParams;
 }

@@ -389,8 +389,8 @@ export interface TransactionSyncParams {
 }
 
 export namespace Transactions {
-  export type GetTransactionsResponse = TransactionsAPI.GetTransactionsResponse;
-  export type TransactionSyncResponse = TransactionsAPI.TransactionSyncResponse;
-  export type TransactionListParams = TransactionsAPI.TransactionListParams;
-  export type TransactionSyncParams = TransactionsAPI.TransactionSyncParams;
+  export import GetTransactionsResponse = TransactionsAPI.GetTransactionsResponse;
+  export import TransactionSyncResponse = TransactionsAPI.TransactionSyncResponse;
+  export import TransactionListParams = TransactionsAPI.TransactionListParams;
+  export import TransactionSyncParams = TransactionsAPI.TransactionSyncParams;
 }

@@ -460,25 +460,25 @@ export interface LinkDeleteParams {
 }
 
 export namespace Links {
-  export type LinkCommon = LinksAPI.LinkCommon;
-  export type LinkResponse = LinksAPI.LinkResponse;
-  export type LinkRetrieveParams = LinksAPI.LinkRetrieveParams;
-  export type LinkUpdateParams = LinksAPI.LinkUpdateParams;
-  export type LinkDeleteParams = LinksAPI.LinkDeleteParams;
+  export import LinkCommon = LinksAPI.LinkCommon;
+  export import LinkResponse = LinksAPI.LinkResponse;
+  export import LinkRetrieveParams = LinksAPI.LinkRetrieveParams;
+  export import LinkUpdateParams = LinksAPI.LinkUpdateParams;
+  export import LinkDeleteParams = LinksAPI.LinkDeleteParams;
   export import Accounts = AccountsAPI.Accounts;
-  export type Account = AccountsAPI.Account;
-  export type AccountRetrieveResponse = AccountsAPI.AccountRetrieveResponse;
-  export type AccountListResponse = AccountsAPI.AccountListResponse;
-  export type AccountRetrieveParams = AccountsAPI.AccountRetrieveParams;
-  export type AccountListParams = AccountsAPI.AccountListParams;
+  export import Account = AccountsAPI.Account;
+  export import AccountRetrieveResponse = AccountsAPI.AccountRetrieveResponse;
+  export import AccountListResponse = AccountsAPI.AccountListResponse;
+  export import AccountRetrieveParams = AccountsAPI.AccountRetrieveParams;
+  export import AccountListParams = AccountsAPI.AccountListParams;
   export import Identity = IdentityAPI.Identity;
-  export type IdentityResponse = IdentityAPI.IdentityResponse;
-  export type IdentityRetrieveParams = IdentityAPI.IdentityRetrieveParams;
+  export import IdentityResponse = IdentityAPI.IdentityResponse;
+  export import IdentityRetrieveParams = IdentityAPI.IdentityRetrieveParams;
   export import Transactions = TransactionsAPI.Transactions;
-  export type GetTransactionsResponse = TransactionsAPI.GetTransactionsResponse;
-  export type TransactionSyncResponse = TransactionsAPI.TransactionSyncResponse;
-  export type TransactionListParams = TransactionsAPI.TransactionListParams;
-  export type TransactionSyncParams = TransactionsAPI.TransactionSyncParams;
+  export import GetTransactionsResponse = TransactionsAPI.GetTransactionsResponse;
+  export import TransactionSyncResponse = TransactionsAPI.TransactionSyncResponse;
+  export import TransactionListParams = TransactionsAPI.TransactionListParams;
+  export import TransactionSyncParams = TransactionsAPI.TransactionSyncParams;
   export import Products = ProductsAPI.Products;
-  export type ProductCreateParams = ProductsAPI.ProductCreateParams;
+  export import ProductCreateParams = ProductsAPI.ProductCreateParams;
 }

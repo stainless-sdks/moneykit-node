@@ -34,5 +34,5 @@ export interface ProductCreateParams {
 }
 
 export namespace Products {
-  export type ProductCreateParams = ProductsAPI.ProductCreateParams;
+  export import ProductCreateParams = ProductsAPI.ProductCreateParams;
 }

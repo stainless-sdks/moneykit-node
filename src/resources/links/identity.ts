@@ -420,6 +420,6 @@ export interface IdentityRetrieveParams {
 }
 
 export namespace Identity {
-  export type IdentityResponse = IdentityAPI.IdentityResponse;
-  export type IdentityRetrieveParams = IdentityAPI.IdentityRetrieveParams;
+  export import IdentityResponse = IdentityAPI.IdentityResponse;
+  export import IdentityRetrieveParams = IdentityAPI.IdentityRetrieveParams;
 }

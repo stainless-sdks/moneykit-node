@@ -377,12 +377,12 @@ export interface AccountListParams {
 }
 
 export namespace Accounts {
-  export type Account = AccountsAPI.Account;
-  export type AccountRetrieveResponse = AccountsAPI.AccountRetrieveResponse;
-  export type AccountListResponse = AccountsAPI.AccountListResponse;
-  export type AccountRetrieveParams = AccountsAPI.AccountRetrieveParams;
-  export type AccountListParams = AccountsAPI.AccountListParams;
+  export import Account = AccountsAPI.Account;
+  export import AccountRetrieveResponse = AccountsAPI.AccountRetrieveResponse;
+  export import AccountListResponse = AccountsAPI.AccountListResponse;
+  export import AccountRetrieveParams = AccountsAPI.AccountRetrieveParams;
+  export import AccountListParams = AccountsAPI.AccountListParams;
   export import Numbers = NumbersAPI.Numbers;
-  export type NumberListResponse = NumbersAPI.NumberListResponse;
-  export type NumberListParams = NumbersAPI.NumberListParams;
+  export import NumberListResponse = NumbersAPI.NumberListResponse;
+  export import NumberListParams = NumbersAPI.NumberListParams;
 }

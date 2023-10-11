@@ -86,6 +86,6 @@ export interface IntrospectRetrieveParams {
 }
 
 export namespace Introspect {
-  export type IntrospectClientResponse = IntrospectAPI.IntrospectClientResponse;
-  export type IntrospectRetrieveParams = IntrospectAPI.IntrospectRetrieveParams;
+  export import IntrospectClientResponse = IntrospectAPI.IntrospectClientResponse;
+  export import IntrospectRetrieveParams = IntrospectAPI.IntrospectRetrieveParams;
 }

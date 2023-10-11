@@ -188,6 +188,6 @@ export interface TransactionListParams {
 }
 
 export namespace Transactions {
-  export type GetUserTransactionsResponse = TransactionsAPI.GetUserTransactionsResponse;
-  export type TransactionListParams = TransactionsAPI.TransactionListParams;
+  export import GetUserTransactionsResponse = TransactionsAPI.GetUserTransactionsResponse;
+  export import TransactionListParams = TransactionsAPI.TransactionListParams;
 }
