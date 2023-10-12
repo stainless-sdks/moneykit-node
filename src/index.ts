@@ -92,7 +92,7 @@ export class Moneykit extends Core.APIClient {
   /**
    * API Client for interfacing with the Moneykit API.
    *
-   * @param {string} [opts.apiKey=process.env['MONEYKIT_API_KEY']]
+   * @param {string} [opts.apiKey==process.env['MONEYKIT_API_KEY'] ?? undefined]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
    * @param {string} [opts.baseURL] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
