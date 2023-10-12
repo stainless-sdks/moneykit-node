@@ -14,6 +14,9 @@ const environments = {
 type Environment = keyof typeof environments;
 
 export interface ClientOptions {
+  /**
+   * Defaults to process.env['MONEYKIT_API_KEY'].
+   */
   apiKey?: string;
 
   /**
