@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import * as Core from './core';
-import * as API from './resources/index';
 import * as Errors from './error';
 import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
 import * as qs from 'qs';
+import * as API from 'moneykit/resources/index';
 
 const environments = {
   production: 'https://production.moneykit.com',

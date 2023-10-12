@@ -3,9 +3,9 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
-import * as Links from 'moneykit/resources/links/index';
+import * as IdentityAPI from 'moneykit/resources/links/identity';
 import * as Shared from 'moneykit/resources/shared';
-import * as API from './index';
+import * as LinksAPI from 'moneykit/resources/links/links';
 
 export class Identity extends APIResource {
   /**
@@ -43,7 +43,7 @@ export interface IdentityResponse {
    */
   accounts: Array<IdentityResponse.Account>;
 
-  link: Links.LinkCommon;
+  link: LinksAPI.LinkCommon;
 }
 
 export namespace IdentityResponse {
@@ -420,6 +420,6 @@ export interface IdentityRetrieveParams {
 }
 
 export namespace Identity {
-  export import IdentityResponse = API.IdentityResponse;
-  export import IdentityRetrieveParams = API.IdentityRetrieveParams;
+  export import IdentityResponse = IdentityAPI.IdentityResponse;
+  export import IdentityRetrieveParams = IdentityAPI.IdentityRetrieveParams;
 }

@@ -3,13 +3,13 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
-import * as Links from 'moneykit/resources/links/index';
+import * as AccountsAPI from 'moneykit/resources/links/accounts/accounts';
 import * as Shared from 'moneykit/resources/shared';
-import { Numbers } from './numbers';
-import * as API from './index';
+import * as LinksAPI from 'moneykit/resources/links/links';
+import * as NumbersAPI from 'moneykit/resources/links/accounts/numbers';
 
 export class Accounts extends APIResource {
-  numbers: Numbers = new Numbers(this.client);
+  numbers: NumbersAPI.Numbers = new NumbersAPI.Numbers(this.client);
 
   /**
    * Fetches a single account associated with a <a href=#tag/Links>link</a>.
@@ -342,7 +342,7 @@ export interface AccountRetrieveResponse {
   /**
    * Link that the account is associated with.
    */
-  link: Links.LinkCommon;
+  link: LinksAPI.LinkCommon;
 }
 
 export interface AccountListResponse {
@@ -354,7 +354,7 @@ export interface AccountListResponse {
   /**
    * Link that the accounts are associated with.
    */
-  link: Links.LinkCommon;
+  link: LinksAPI.LinkCommon;
 }
 
 export interface AccountRetrieveParams {
@@ -377,13 +377,12 @@ export interface AccountListParams {
 }
 
 export namespace Accounts {
-  export import Account = API.Account;
-  export import AccountRetrieveResponse = API.AccountRetrieveResponse;
-  export import AccountListResponse = API.AccountListResponse;
-  export import AccountRetrieveParams = API.AccountRetrieveParams;
-  export import AccountListParams = API.AccountListParams;
-
-  export import Numbers = API.Numbers;
-  export import NumberListResponse = API.NumberListResponse;
-  export import NumberListParams = API.NumberListParams;
+  export import Account = AccountsAPI.Account;
+  export import AccountRetrieveResponse = AccountsAPI.AccountRetrieveResponse;
+  export import AccountListResponse = AccountsAPI.AccountListResponse;
+  export import AccountRetrieveParams = AccountsAPI.AccountRetrieveParams;
+  export import AccountListParams = AccountsAPI.AccountListParams;
+  export import Numbers = NumbersAPI.Numbers;
+  export import NumberListResponse = NumbersAPI.NumberListResponse;
+  export import NumberListParams = NumbersAPI.NumberListParams;
 }

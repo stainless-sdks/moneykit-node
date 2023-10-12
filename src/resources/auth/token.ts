@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'moneykit/resource';
-import * as API from './index';
+import * as TokenAPI from 'moneykit/resources/auth/token';
 
 export class Token extends APIResource {}
 
@@ -26,5 +26,5 @@ export interface GenerateAccessTokenResponse {
 }
 
 export namespace Token {
-  export import GenerateAccessTokenResponse = API.GenerateAccessTokenResponse;
+  export import GenerateAccessTokenResponse = TokenAPI.GenerateAccessTokenResponse;
 }

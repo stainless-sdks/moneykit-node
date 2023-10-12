@@ -2,8 +2,8 @@
 
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
+import * as ProductsAPI from 'moneykit/resources/links/products';
 import * as Shared from 'moneykit/resources/shared';
-import * as API from './index';
 
 export class Products extends APIResource {
   /**
@@ -34,5 +34,5 @@ export interface ProductCreateParams {
 }
 
 export namespace Products {
-  export import ProductCreateParams = API.ProductCreateParams;
+  export import ProductCreateParams = ProductsAPI.ProductCreateParams;
 }

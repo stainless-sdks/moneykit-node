@@ -3,8 +3,8 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as JwksAPI from 'moneykit/resources/well-known/jwks';
 import * as Shared from 'moneykit/resources/shared';
-import * as API from './index';
 
 export class Jwks extends APIResource {
   /**
@@ -43,6 +43,6 @@ export interface JwkJsonParams {
 }
 
 export namespace Jwks {
-  export import JwkSet = API.JwkSet;
-  export import JwkJsonParams = API.JwkJsonParams;
+  export import JwkSet = JwksAPI.JwkSet;
+  export import JwkJsonParams = JwksAPI.JwkJsonParams;
 }

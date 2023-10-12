@@ -3,18 +3,18 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
+import * as LinksAPI from 'moneykit/resources/links/links';
 import * as Shared from 'moneykit/resources/shared';
-import { Accounts } from './accounts/accounts';
-import { Identity } from './identity';
-import { Transactions } from './transactions';
-import { Products } from './products';
-import * as API from './index';
+import * as IdentityAPI from 'moneykit/resources/links/identity';
+import * as ProductsAPI from 'moneykit/resources/links/products';
+import * as TransactionsAPI from 'moneykit/resources/links/transactions';
+import * as AccountsAPI from 'moneykit/resources/links/accounts/accounts';
 
 export class Links extends APIResource {
-  accounts: Accounts = new Accounts(this.client);
-  identity: Identity = new Identity(this.client);
-  transactions: Transactions = new Transactions(this.client);
-  products: Products = new Products(this.client);
+  accounts: AccountsAPI.Accounts = new AccountsAPI.Accounts(this.client);
+  identity: IdentityAPI.Identity = new IdentityAPI.Identity(this.client);
+  transactions: TransactionsAPI.Transactions = new TransactionsAPI.Transactions(this.client);
+  products: ProductsAPI.Products = new ProductsAPI.Products(this.client);
 
   /**
    * Fetches details about a link.
@@ -460,29 +460,25 @@ export interface LinkDeleteParams {
 }
 
 export namespace Links {
-  export import LinkCommon = API.LinkCommon;
-  export import LinkResponse = API.LinkResponse;
-  export import LinkRetrieveParams = API.LinkRetrieveParams;
-  export import LinkUpdateParams = API.LinkUpdateParams;
-  export import LinkDeleteParams = API.LinkDeleteParams;
-
-  export import Accounts = API.Accounts;
-  export import Account = API.Account;
-  export import AccountRetrieveResponse = API.AccountRetrieveResponse;
-  export import AccountListResponse = API.AccountListResponse;
-  export import AccountRetrieveParams = API.AccountRetrieveParams;
-  export import AccountListParams = API.AccountListParams;
-
-  export import Identity = API.Identity;
-  export import IdentityResponse = API.IdentityResponse;
-  export import IdentityRetrieveParams = API.IdentityRetrieveParams;
-
-  export import Transactions = API.Transactions;
-  export import GetTransactionsResponse = API.GetTransactionsResponse;
-  export import TransactionSyncResponse = API.TransactionSyncResponse;
-  export import TransactionListParams = API.TransactionListParams;
-  export import TransactionSyncParams = API.TransactionSyncParams;
-
-  export import Products = API.Products;
-  export import ProductCreateParams = API.ProductCreateParams;
+  export import LinkCommon = LinksAPI.LinkCommon;
+  export import LinkResponse = LinksAPI.LinkResponse;
+  export import LinkRetrieveParams = LinksAPI.LinkRetrieveParams;
+  export import LinkUpdateParams = LinksAPI.LinkUpdateParams;
+  export import LinkDeleteParams = LinksAPI.LinkDeleteParams;
+  export import Accounts = AccountsAPI.Accounts;
+  export import Account = AccountsAPI.Account;
+  export import AccountRetrieveResponse = AccountsAPI.AccountRetrieveResponse;
+  export import AccountListResponse = AccountsAPI.AccountListResponse;
+  export import AccountRetrieveParams = AccountsAPI.AccountRetrieveParams;
+  export import AccountListParams = AccountsAPI.AccountListParams;
+  export import Identity = IdentityAPI.Identity;
+  export import IdentityResponse = IdentityAPI.IdentityResponse;
+  export import IdentityRetrieveParams = IdentityAPI.IdentityRetrieveParams;
+  export import Transactions = TransactionsAPI.Transactions;
+  export import GetTransactionsResponse = TransactionsAPI.GetTransactionsResponse;
+  export import TransactionSyncResponse = TransactionsAPI.TransactionSyncResponse;
+  export import TransactionListParams = TransactionsAPI.TransactionListParams;
+  export import TransactionSyncParams = TransactionsAPI.TransactionSyncParams;
+  export import Products = ProductsAPI.Products;
+  export import ProductCreateParams = ProductsAPI.ProductCreateParams;
 }

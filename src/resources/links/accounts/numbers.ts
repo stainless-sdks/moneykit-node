@@ -3,9 +3,9 @@
 import * as Core from 'moneykit/core';
 import { APIResource } from 'moneykit/resource';
 import { isRequestOptions } from 'moneykit/core';
-import * as Links from 'moneykit/resources/links/index';
+import * as NumbersAPI from 'moneykit/resources/links/accounts/numbers';
 import * as Shared from 'moneykit/resources/shared';
-import * as API from './index';
+import * as LinksAPI from 'moneykit/resources/links/links';
 
 export class Numbers extends APIResource {
   /**
@@ -38,7 +38,7 @@ export class Numbers extends APIResource {
 export interface NumberListResponse {
   accounts: Array<NumberListResponse.Account>;
 
-  link: Links.LinkCommon;
+  link: LinksAPI.LinkCommon;
 }
 
 export namespace NumberListResponse {
@@ -409,6 +409,6 @@ export interface NumberListParams {
 }
 
 export namespace Numbers {
-  export import NumberListResponse = API.NumberListResponse;
-  export import NumberListParams = API.NumberListParams;
+  export import NumberListResponse = NumbersAPI.NumberListResponse;
+  export import NumberListParams = NumbersAPI.NumberListParams;
 }
