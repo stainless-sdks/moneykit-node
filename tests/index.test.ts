@@ -135,8 +135,8 @@ describe('instantiate client', () => {
   });
 
   test('maxRetries option is correctly set', () => {
-    const client = new Moneykit({ maxRetries: 1, apiKey: 'My API Key' });
-    expect(client.maxRetries).toEqual(1);
+    const client = new Moneykit({ maxRetries: 4, apiKey: 'My API Key' });
+    expect(client.maxRetries).toEqual(4);
 
     // default
     const client2 = new Moneykit({ apiKey: 'My API Key' });
