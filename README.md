@@ -29,7 +29,7 @@ const moneykit = new Moneykit({
 async function main() {
   const linkResponse = await moneykit.links.retrieve('id');
 
-  console.log(linkResponse);
+  console.log(linkResponse.institution_id);
 }
 
 main();
@@ -68,7 +68,6 @@ async function main() {
     if (err instanceof Moneykit.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
-
       console.log(err.headers); // {server: 'nginx', ...}
     } else {
       throw err;
