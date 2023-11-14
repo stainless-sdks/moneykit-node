@@ -27,7 +27,7 @@ export class Accounts extends APIResource {
       return this.list(id, {}, params);
     }
     const { 'moneykit-version': moneykitVersion, ...query } = params;
-    return this.get(`/users/${id}/accounts`, {
+    return this._client.get(`/users/${id}/accounts`, {
       query,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

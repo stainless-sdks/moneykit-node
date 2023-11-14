@@ -49,8 +49,8 @@ describe('resource links', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('del', async () => {
-    const responsePromise = moneykit.links.del('mk_eqkWN34UEoa2NxyALG8pcV');
+  test('delete', async () => {
+    const responsePromise = moneykit.links.delete('mk_eqkWN34UEoa2NxyALG8pcV');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -60,17 +60,17 @@ describe('resource links', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('del: request options instead of params are passed correctly', async () => {
+  test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      moneykit.links.del('mk_eqkWN34UEoa2NxyALG8pcV', { path: '/_stainless_unknown_path' }),
+      moneykit.links.delete('mk_eqkWN34UEoa2NxyALG8pcV', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Moneykit.NotFoundError);
   });
 
-  test('del: request options and params are passed correctly', async () => {
+  test('delete: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      moneykit.links.del(
+      moneykit.links.delete(
         'mk_eqkWN34UEoa2NxyALG8pcV',
         { 'moneykit-version': '2023-02-18' },
         { path: '/_stainless_unknown_path' },

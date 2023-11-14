@@ -15,7 +15,7 @@ Methods:
 
 - <code title="get /links/{id}">client.links.<a href="./src/resources/links/links.ts">retrieve</a>(id, { ...params }) -> LinkResponse</code>
 - <code title="patch /links/{id}">client.links.<a href="./src/resources/links/links.ts">update</a>(id, { ...params }) -> LinkResponse</code>
-- <code title="delete /links/{id}">client.links.<a href="./src/resources/links/links.ts">del</a>(id, { ...params }) -> void</code>
+- <code title="delete /links/{id}">client.links.<a href="./src/resources/links/links.ts">delete</a>(id, { ...params }) -> void</code>
 
 ## Accounts
 

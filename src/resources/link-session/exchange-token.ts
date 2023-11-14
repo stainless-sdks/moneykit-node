@@ -17,7 +17,7 @@ export class ExchangeToken extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<ExchangeTokenResponse> {
     const { 'moneykit-version': moneykitVersion, ...body } = params;
-    return this.post('/link-session/exchange-token', {
+    return this._client.post('/link-session/exchange-token', {
       body,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

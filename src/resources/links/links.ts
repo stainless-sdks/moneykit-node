@@ -11,10 +11,10 @@ import * as TransactionsAPI from 'moneykit/resources/links/transactions';
 import * as AccountsAPI from 'moneykit/resources/links/accounts/accounts';
 
 export class Links extends APIResource {
-  accounts: AccountsAPI.Accounts = new AccountsAPI.Accounts(this.client);
-  identity: IdentityAPI.Identity = new IdentityAPI.Identity(this.client);
-  transactions: TransactionsAPI.Transactions = new TransactionsAPI.Transactions(this.client);
-  products: ProductsAPI.Products = new ProductsAPI.Products(this.client);
+  accounts: AccountsAPI.Accounts = new AccountsAPI.Accounts(this._client);
+  identity: IdentityAPI.Identity = new IdentityAPI.Identity(this._client);
+  transactions: TransactionsAPI.Transactions = new TransactionsAPI.Transactions(this._client);
+  products: ProductsAPI.Products = new ProductsAPI.Products(this._client);
 
   /**
    * Fetches details about a link.
@@ -34,7 +34,7 @@ export class Links extends APIResource {
       return this.retrieve(id, {}, params);
     }
     const { 'moneykit-version': moneykitVersion } = params;
-    return this.get(`/links/${id}`, {
+    return this._client.get(`/links/${id}`, {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
     });
@@ -45,7 +45,7 @@ export class Links extends APIResource {
    */
   update(id: string, params: LinkUpdateParams, options?: Core.RequestOptions): Core.APIPromise<LinkResponse> {
     const { 'moneykit-version': moneykitVersion, ...body } = params;
-    return this.patch(`/links/${id}`, {
+    return this._client.patch(`/links/${id}`, {
       body,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
@@ -57,18 +57,18 @@ export class Links extends APIResource {
    * and access token are no longer valid and cannot be used to access any data that
    * was associated with it.
    */
-  del(id: string, params?: LinkDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  del(id: string, options?: Core.RequestOptions): Core.APIPromise<void>;
-  del(
+  delete(id: string, params?: LinkDeleteParams, options?: Core.RequestOptions): Core.APIPromise<void>;
+  delete(id: string, options?: Core.RequestOptions): Core.APIPromise<void>;
+  delete(
     id: string,
     params: LinkDeleteParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     if (isRequestOptions(params)) {
-      return this.del(id, {}, params);
+      return this.delete(id, {}, params);
     }
     const { 'moneykit-version': moneykitVersion } = params;
-    return this.delete(`/links/${id}`, {
+    return this._client.delete(`/links/${id}`, {
       ...options,
       headers: { Accept: '', 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
     });

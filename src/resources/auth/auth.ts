@@ -5,8 +5,8 @@ import * as IntrospectAPI from 'moneykit/resources/auth/introspect';
 import * as TokenAPI from 'moneykit/resources/auth/token';
 
 export class Auth extends APIResource {
-  token: TokenAPI.Token = new TokenAPI.Token(this.client);
-  introspect: IntrospectAPI.Introspect = new IntrospectAPI.Introspect(this.client);
+  token: TokenAPI.Token = new TokenAPI.Token(this._client);
+  introspect: IntrospectAPI.Introspect = new IntrospectAPI.Introspect(this._client);
 }
 
 export namespace Auth {

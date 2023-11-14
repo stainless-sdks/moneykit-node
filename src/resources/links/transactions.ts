@@ -33,7 +33,7 @@ export class Transactions extends APIResource {
       return this.list(id, {}, params);
     }
     const { 'moneykit-version': moneykitVersion, ...query } = params;
-    return this.get(`/links/${id}/transactions`, {
+    return this._client.get(`/links/${id}/transactions`, {
       query,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
@@ -65,7 +65,7 @@ export class Transactions extends APIResource {
       return this.sync(id, {}, params);
     }
     const { 'moneykit-version': moneykitVersion, ...query } = params;
-    return this.get(`/links/${id}/transactions/sync`, {
+    return this._client.get(`/links/${id}/transactions/sync`, {
       query,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

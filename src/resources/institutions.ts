@@ -25,7 +25,7 @@ export class Institutions extends APIResource {
       return this.retrieve(institutionId, {}, params);
     }
     const { 'moneykit-version': moneykitVersion } = params;
-    return this.get(`/institutions/${institutionId}`, {
+    return this._client.get(`/institutions/${institutionId}`, {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
     });
@@ -48,7 +48,7 @@ export class Institutions extends APIResource {
       return this.list({}, params);
     }
     const { 'moneykit-version': moneykitVersion, ...query } = params;
-    return this.get('/institutions', {
+    return this._client.get('/institutions', {
       query,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

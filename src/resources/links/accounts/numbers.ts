@@ -28,7 +28,7 @@ export class Numbers extends APIResource {
       return this.list(id, {}, params);
     }
     const { 'moneykit-version': moneykitVersion } = params;
-    return this.get(`/links/${id}/accounts/numbers`, {
+    return this._client.get(`/links/${id}/accounts/numbers`, {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
     });

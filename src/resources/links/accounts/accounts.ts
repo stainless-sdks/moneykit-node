@@ -9,7 +9,7 @@ import * as LinksAPI from 'moneykit/resources/links/links';
 import * as NumbersAPI from 'moneykit/resources/links/accounts/numbers';
 
 export class Accounts extends APIResource {
-  numbers: NumbersAPI.Numbers = new NumbersAPI.Numbers(this.client);
+  numbers: NumbersAPI.Numbers = new NumbersAPI.Numbers(this._client);
 
   /**
    * Fetches a single account associated with a <a href=#tag/Links>link</a>.
@@ -35,7 +35,7 @@ export class Accounts extends APIResource {
       return this.retrieve(id, accountId, {}, params);
     }
     const { 'moneykit-version': moneykitVersion } = params;
-    return this.get(`/links/${id}/accounts/${accountId}`, {
+    return this._client.get(`/links/${id}/accounts/${accountId}`, {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
     });
@@ -60,7 +60,7 @@ export class Accounts extends APIResource {
       return this.list(id, {}, params);
     }
     const { 'moneykit-version': moneykitVersion, ...query } = params;
-    return this.get(`/links/${id}/accounts`, {
+    return this._client.get(`/links/${id}/accounts`, {
       query,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

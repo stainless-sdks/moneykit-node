@@ -21,7 +21,7 @@ export class Jwks extends APIResource {
       return this.json({}, params);
     }
     const { 'moneykit-version': moneykitVersion } = params;
-    return this.get('/.well-known/jwks.json', {
+    return this._client.get('/.well-known/jwks.json', {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
     });

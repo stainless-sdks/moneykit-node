@@ -7,7 +7,7 @@ import * as Shared from 'moneykit/resources/shared';
 import * as ExchangeTokenAPI from 'moneykit/resources/link-session/exchange-token';
 
 export class LinkSession extends APIResource {
-  exchangeToken: ExchangeTokenAPI.ExchangeToken = new ExchangeTokenAPI.ExchangeToken(this.client);
+  exchangeToken: ExchangeTokenAPI.ExchangeToken = new ExchangeTokenAPI.ExchangeToken(this._client);
 
   /**
    * This endpoint is to be called by your back end, to establish a new link session
@@ -18,7 +18,7 @@ export class LinkSession extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<CreateLinkSessionResponse> {
     const { 'moneykit-version': moneykitVersion, ...body } = params;
-    return this.post('/link-session', {
+    return this._client.post('/link-session', {
       body,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

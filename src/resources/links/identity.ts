@@ -29,7 +29,7 @@ export class Identity extends APIResource {
       return this.retrieve(id, {}, params);
     }
     const { 'moneykit-version': moneykitVersion, ...query } = params;
-    return this.get(`/links/${id}/identity`, {
+    return this._client.get(`/links/${id}/identity`, {
       query,
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

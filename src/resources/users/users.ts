@@ -5,8 +5,8 @@ import * as AccountsAPI from 'moneykit/resources/users/accounts';
 import * as TransactionsAPI from 'moneykit/resources/users/transactions';
 
 export class Users extends APIResource {
-  transactions: TransactionsAPI.Transactions = new TransactionsAPI.Transactions(this.client);
-  accounts: AccountsAPI.Accounts = new AccountsAPI.Accounts(this.client);
+  transactions: TransactionsAPI.Transactions = new TransactionsAPI.Transactions(this._client);
+  accounts: AccountsAPI.Accounts = new AccountsAPI.Accounts(this._client);
 }
 
 export namespace Users {

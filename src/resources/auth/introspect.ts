@@ -24,7 +24,7 @@ export class Introspect extends APIResource {
       return this.retrieve({}, params);
     }
     const { 'moneykit-version': moneykitVersion } = params;
-    return this.get('/auth/introspect', {
+    return this._client.get('/auth/introspect', {
       ...options,
       headers: { 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },
     });

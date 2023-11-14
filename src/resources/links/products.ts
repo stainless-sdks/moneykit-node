@@ -13,7 +13,7 @@ export class Products extends APIResource {
    */
   create(id: string, params: ProductCreateParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     const { 'moneykit-version': moneykitVersion, ...body } = params;
-    return this.post(`/links/${id}/products`, {
+    return this._client.post(`/links/${id}/products`, {
       body,
       ...options,
       headers: { Accept: '', 'moneykit-version': moneykitVersion?.toString() || '', ...options?.headers },

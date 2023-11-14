@@ -4,7 +4,7 @@ import { APIResource } from 'moneykit/resource';
 import * as JwksAPI from 'moneykit/resources/well-known/jwks';
 
 export class WellKnown extends APIResource {
-  jwks: JwksAPI.Jwks = new JwksAPI.Jwks(this.client);
+  jwks: JwksAPI.Jwks = new JwksAPI.Jwks(this._client);
 }
 
 export namespace WellKnown {
