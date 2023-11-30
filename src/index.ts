@@ -30,8 +30,10 @@ export interface ClientOptions {
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
+   *
+   * Defaults to process.env['MONEYKIT_BASE_URL'].
    */
-  baseURL?: string;
+  baseURL?: string | null | undefined;
 
   /**
    * The maximum amount of time (in milliseconds) that the client should wait for a response
@@ -92,9 +94,9 @@ export class Moneykit extends Core.APIClient {
   /**
    * API Client for interfacing with the Moneykit API.
    *
-   * @param {string} [opts.apiKey==process.env['MONEYKIT_API_KEY'] ?? undefined]
+   * @param {string} [opts.apiKey=process.env['MONEYKIT_API_KEY'] ?? undefined]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
-   * @param {string} [opts.baseURL] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['MONEYKIT_BASE_URL'] ?? https://production.moneykit.com] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -102,7 +104,11 @@ export class Moneykit extends Core.APIClient {
    * @param {Core.Headers} opts.defaultHeaders - Default headers to include with every request to the API.
    * @param {Core.DefaultQuery} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
-  constructor({ apiKey = Core.readEnv('MONEYKIT_API_KEY'), ...opts }: ClientOptions = {}) {
+  constructor({
+    baseURL = Core.readEnv('MONEYKIT_BASE_URL'),
+    apiKey = Core.readEnv('MONEYKIT_API_KEY'),
+    ...opts
+  }: ClientOptions = {}) {
     if (apiKey === undefined) {
       throw new Errors.MoneykitError(
         "The MONEYKIT_API_KEY environment variable is missing or empty; either provide it, or instantiate the Moneykit client with an apiKey option, like new Moneykit({ apiKey: 'My API Key' }).",
@@ -112,8 +118,15 @@ export class Moneykit extends Core.APIClient {
     const options: ClientOptions = {
       apiKey,
       ...opts,
+      baseURL,
       environment: opts.environment ?? 'production',
     };
+
+    if (baseURL && opts.environment) {
+      throw new Errors.MoneykitError(
+        'Ambiguous URL; The `baseURL` option (or MONEYKIT_BASE_URL env var) and the `environment` option are given. If you want to use the environment you must pass baseURL: null',
+      );
+    }
 
     super({
       baseURL: options.baseURL || environments[options.environment || 'production'],
