@@ -22,7 +22,7 @@ The full API of this library can be found in [api.md](https://www.github.com/mon
 import Moneykit from 'moneykit';
 
 const moneykit = new Moneykit({
-  apiKey: 'My API Key', // defaults to process.env["MONEYKIT_API_KEY"]
+  apiKey: process.env['MONEYKIT_API_KEY'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
 });
 
@@ -43,7 +43,7 @@ This library includes TypeScript definitions for all request params and response
 import Moneykit from 'moneykit';
 
 const moneykit = new Moneykit({
-  apiKey: 'My API Key', // defaults to process.env["MONEYKIT_API_KEY"]
+  apiKey: process.env['MONEYKIT_API_KEY'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
 });
 
