@@ -193,7 +193,7 @@ export const maybeMultipartFormRequestOptions = async <T extends {} = Record<str
   return getMultipartRequestOptions(form, opts);
 };
 
-export const multipartFormRequestOptions = async <T extends {} = Record<string, unknown>>(
+export const multipartFormRequestOptions = async <T = Record<string, unknown>>(
   opts: RequestOptions<T>,
 ): Promise<RequestOptions<T | MultipartBody>> => {
   const form = await createForm(opts.body);
