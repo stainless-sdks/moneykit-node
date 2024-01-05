@@ -741,7 +741,7 @@ const requestOptionsKeys: KeysEnum<RequestOptions> = {
   __binaryResponse: true,
 };
 
-export const isRequestOptions = (obj: unknown): obj is RequestOptions<Record<string, unknown> | Readable> => {
+export const isRequestOptions = (obj: unknown): obj is RequestOptions => {
   return (
     typeof obj === 'object' &&
     obj !== null &&
